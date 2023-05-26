@@ -1,0 +1,51 @@
+public class cal {
+    public Integer operand1 { get; set; }
+    public Integer operand2 { get; set; }
+    public Integer result { get; set; }
+    public Double resultt{get; set;}
+
+    public void add() {
+        result = operand1 + operand2;
+    }
+    
+    public void sqrt()
+    {
+        resultt=Math.sqrt(operand1);
+    }
+
+    public void subtract() {
+        result = operand1 - operand2;
+    }
+
+    public void multiply() {
+        result = operand1 * operand2;
+    }
+
+    public void divide() {
+        result = operand1 / operand2;
+    }
+}
+
+--------------
+
+<apex:page controller="cal">
+    <apex:form>
+        <apex:pageBlock>
+            <apex:pageBlockSection>
+                <apex:inputText value="{!operand1}" label="Operand 1"/>
+                <apex:inputText value="{!operand2}" label="Operand 2"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection>
+                <apex:commandButton action="{!add}" value="addition"/>
+                <apex:commandButton action="{!subtract}" value="Subtract"/>
+                <apex:commandButton action="{!multiply}" value="Multiply"/>
+                <apex:commandButton action="{!divide}" value="Divide"/>
+                <apex:commandButton action="{!sqrt}" value="sqrt"/>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection>
+                <apex:outputText value="Result: {!result}"/>
+                <apex:outputText value="Result: {!resultt}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
